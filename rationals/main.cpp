@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]){
     rational r6(a,-b);  
     rational r7(-a,-b); 
     rational r8(r5);
-	rational r9(r3);
+	rational r9(r6);
 
 	cout << "r1: " << r1 << endl;
 	cout << "r2: " << r2 << endl;
