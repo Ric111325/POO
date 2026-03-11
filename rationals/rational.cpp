@@ -71,6 +71,23 @@ void rational::simplify(){
 	}
 }
 
+
+
+
+//Operaciones aritmeticas de asignacion
+
+rational& rational::operator = (const rational&r){
+
+
+	
+}
+
+
+
+
+
+
+
 ostream &operator << (ostream &os, const rational &a){
 	
 	return os << a.num() << " : " << a.denom();

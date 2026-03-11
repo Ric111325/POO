@@ -22,15 +22,20 @@ public:
 	
 	friend ostream &operator << (ostream &, radio &);
 	
+	explicit operator float() const{
+
+		return band == am ? amfreq : fmfreq;
+	}
+
 	void cambiar();
 	void inc();
 	void dec();
 	
 	void operator ++ (int);
 	void operator -- (int);	
-	
-	
 	void display();	
+
+
 };
 
 ostream &operator << (ostream &, radio &);
