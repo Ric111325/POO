@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main (int argc, const char *argv []){
+
+    int a = 7;
+    int b = 3;
+
+    cout << a/b << endl;
+
+    return 0;
+
+}
+
