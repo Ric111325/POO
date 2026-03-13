@@ -20,7 +20,7 @@ public:
 
 	rational();
 	rational(int, int = 1);
-	rational(rational &);
+	rational(const rational &);
 	
 	explicit operator float() const {
 
