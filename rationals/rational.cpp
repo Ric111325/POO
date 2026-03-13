@@ -71,21 +71,130 @@ void rational::simplify(){
 	}
 }
 
+// Operaciones Aritmeticas
 
+rational operator + (rational a, rational b){
 
+	rational r;
 
-//Operaciones aritmeticas de asignacion
+	r=a;
+	r+=b;
 
-rational& rational::operator = (const rational&r){
+	return r;
+}
 
+rational operator - (rational a, rational b){
 
-	
+	rational r;
+
+	r=a;
+	r-=b;
+
+	return r;
+}
+
+rational operator * (rational a, rational b){
+
+	rational r;
+
+	r=a;
+	r*=b;
+
+	return r;
+}
+
+rational operator / (rational a, rational b){
+
+	rational r;
+
+	r=a;
+	r/=b;
+
+	return r;
 }
 
 
+rational operator ! (rational r){
 
+	return rational(r.denom(), r.num());
+}
 
+rational operator - (rational r){
+	
+	return rational(-r.num(), r.denom());
+}
 
+//Operaciones aritmeticas de asignacion
+rational& rational::operator = (const rational&r){
+
+	if (this != &r)	{
+		_num = r._denom;
+		_denom = r._denom;
+	}	
+	return *this;
+}
+
+rational& rational::operator += (const rational&r){
+
+	_num = _num*r._denom + r._num*_denom;
+	_denom = _denom* r._denom;
+	
+	simplify ();	
+
+	return *this;
+}
+
+rational& rational::operator -= (const rational&r){
+
+	_num = _num*r._denom - r._num*_denom;
+	_denom = _denom* r._denom;
+	
+	simplify ();	
+
+	return *this;
+}
+
+rational& rational::operator *= (const rational&r){
+
+	_num *= r._num;
+	_denom *= r._denom;
+	
+	simplify ();	
+
+	return *this;
+}
+
+rational& rational::operator /= (const rational&r){
+
+	_num *= r._denom;
+	_denom *= r._num;
+	
+	simplify ();	
+
+	return *this;
+}
+
+//Operaciones Relacionales
+
+bool operator== (rational a, rational b){
+
+	return a.num() == b.num() && a.denom() ==b.denom();
+}
+
+bool operator != (rational a, rational b){
+
+	return !(a == b);
+}
+
+bool operator < (rational a, rational b){
+
+	return a.num()*b.denom() < b.num()*a.denom();
+}
+
+bool operator > (rational a, rational b){
+
+	return a.num()*b.denom() > b.num()*a.denom();
+}
 
 
 ostream &operator << (ostream &os, const rational &a){

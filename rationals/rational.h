@@ -43,7 +43,7 @@ public:
 
 
 ostream &operator << (ostream &, const rational&);
-istream &operator << (istream &,rational&);
+istream &operator >> (istream &,rational&);
 
 //Operaciones Aritméticas
 rational operator + (rational, rational);

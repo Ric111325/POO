@@ -15,8 +15,8 @@ int main(int argc, const char * argv[]){
 	cout << "Ingrese d: ";
 	cin >> d;
 
-	rational r1(a/b);      
-    rational r2(c/d);   
+	rational r1(a,b);      
+    rational r2(c,d);   
     
 	rational sum = r1 + r2;	
 	rational diff = r1 - r2;
