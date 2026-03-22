@@ -27,6 +27,11 @@ public:
 		return (float) _num / _denom;	 
 	}
 
+	explicit operator int() const{
+
+		return _num / _denom;
+	}
+
 	void simplify ();
 
 	//Operaciones aritmeticas de asignacion
