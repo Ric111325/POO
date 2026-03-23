@@ -22,7 +22,7 @@ public:
 	rational(int, int = 1);
 	rational(const rational &);
 	
-	explicit operator float() const {
+	operator float() const {
 
 		return (float) _num / _denom;	 
 	}
