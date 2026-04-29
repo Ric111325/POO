@@ -3,18 +3,21 @@
 
 int main (int argc, const char * argv[]){
 	
-	radio a;
+	radio *p;
+	p = new radio;
+	 
+	cout << *p << endl;
 
-	a.cambiar();
+	p -> cambiar();
+	cout << *p << endl;
 
-	for(int i = 0; i < 10; i++) a--;
-	
-	cout << "El radio esta en la frecuencia " << a << endl;	
+	(*p)++;
+	cout << *p << endl;
 
-	cout << "\n\nEjemplo del uso de explicit \n\n";
+	p -> operator++(1);
+	cout << *p << endl;
 
-	cout<< "Radio: " << a << endl;
-	cout<< "Radio: " << (float)a << endl;
-	    
+	delete p;
+
 	return 0;	
 }
