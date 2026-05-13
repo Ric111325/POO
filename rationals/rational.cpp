@@ -129,10 +129,9 @@ rational operator - (rational r){
 
 rational& rational::operator = (const rational&r){
 
-	if (this != &r)	{
-		_num = r._num;
+			_num = r._num;
 		_denom = r._denom;
-	}	
+		
 	return *this;
 }
 
