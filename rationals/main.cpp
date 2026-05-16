@@ -4,65 +4,55 @@ using namespace std;
 
 int main(int argc, const char * argv[]){
 
-	int a,b,c,d;
+	bool done = false;
+	
+while (!done) {
+	
+  try {
+			
+    int n1, d1, n2, d2;
+			
+    cout << "Iniciando la aplicacion\n\n";		
+    cin >> n1 >> d1 >> n2 >> d2;
+			
+    rational a(n1,d1);
+    rational b(n2,d2);
+			
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+		
+    cout << "suma:             " << a + b << endl;
+	    cout << "resta:            " << a - b << endl;
+	    cout << "multiplicacion:   " << a * b << endl;
+	    cout << "division:         " << a / b << endl;
+	    cout << "complemento de a: " << !a << endl;
+	    cout << "negacion de a:    " << -a << endl;
 
-	cout << "Escribe r1: \n(Numerador Denominador)" << endl;
-	cin >> a >> b;
+    cout << "\nProceso exitoso\n\n";
+			
+    done = true;
+			
+  } catch (int e) {
 
-	cout << "\nEscribe r2: \n(Numerador Denominador)" << endl;
-	cin >> c >> d;
+    cout << "Se detecto una division por cero\n\n";
 
-	rational r1(a,b);
-	rational r2(c,d);
-	rational r3(2);
+	if (e == 1){
+		 cout << "Ocurrio un error en constructor\n\n";
+
+	}
 	
-	if ((r1 / r2) == r1 * (rational(1) / r2)) cout << "Siempre es verdad\n";
-	if ((int) r1 <= (float) r1) cout << "Siempre es verdad\n\n";
+	else if (e == 2){
+		cout << "Ocurrio un error en la division\n\n";
+
+	}
 	
-	cout << "\nSiempre es uno: " << float(r1 * !r1) << endl;
-	cout << "Siempre es cero: " << float(r1 - r1) << "\n\n";
-	
-	cout << "r1: " << r1 << " = " << (float) r1 << endl;
-	cout << "r1: " << r2 << " = " << (float) r2 << "\n\n";
-	
-	r1 *= r1;
-	
-	cout << "r1 elevado al cuadrado: " << r1 << " = " << (float) r1 << endl;
-	
-	r1 += 1;
-	
-	cout << "r1 aumentado en uno: " << r1 << "\n\n";
-	
-	r1 = r2 = r3;
-	
-	cout << "r1: " << r1 << ", r2: " << r2 << ", r3: " << r3 << endl;
-	
-	r1 = rational(1,2);
-	r2 = rational(1,3);
-	r3 = rational(1,4);
-	
-	r1 += r2 += r3;
-	
-	cout << "r1: " << r1 << ", r2: " << r2 << ", r3: " << r3 << endl;
-	
-	r1 = rational(1,2);
-	r2 = rational(2,3);
-	r3 = rational(3,4);
-	
-	r1 *= r2 += r3;
-	
-	cout << "r1: " << r1 << ", r2: " << r2 << ", r3: " << r3 << endl;
-	
-	r1 = rational(2,3);
-	
-	r1 = rational(3,4);
-	r2 = rational(3,4);
-	
-	r1 -= r2 -= r1;
-	
-	cout << "r1: " << r1 << ", r2: " << r2 << endl;
-	
-	r1 = rational(1,2);
+	else if (e == 3){
+		cout << "Ocurrio un error en el complemento\n\n";
+	}
+
+	}
+
+
 
 	return 0;	
-} 
+}

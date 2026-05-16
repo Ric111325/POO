@@ -9,8 +9,9 @@ rational::rational (){
 
 rational::rational (int a, int b){
 	
-	
-	assert (b != 0);
+	if(b == 0){
+		throw 1;
+	}
 	
 	_num = a;
 	_denom = b;
@@ -117,6 +118,10 @@ rational operator / (rational a, rational b){
 
 rational operator ! (rational r){
 
+	if(r.num() == 0){
+        throw 3;
+    }
+
 	return rational(r.denom(), r.num());
 }
 
@@ -156,6 +161,8 @@ rational& rational::operator -= (const rational&r){
 }
 
 rational& rational::operator *= (const rational&r){
+ 
+	
 
 	_num *= r._num;
 	_denom *= r._denom;
@@ -166,6 +173,10 @@ rational& rational::operator *= (const rational&r){
 }
 
 rational& rational::operator /= (const rational&r){
+
+	if(r._num == 0){
+        throw 2;
+    }
 
 	_num *= r._denom;
 	_denom *= r._num;
