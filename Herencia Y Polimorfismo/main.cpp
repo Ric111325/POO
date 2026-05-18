@@ -11,7 +11,7 @@ public:
     string nombre;
 
     figura(string n){
-        nombre = n;
+        nombre = n ;
     }
 
     virtual float calcularArea() = 0;
@@ -33,11 +33,11 @@ public:
         altura = b;
     }
 
-    float getBase(){
+    float obtenerBase(){
         return base;
     }
 
-    float getAltura(){
+    float obternerAltura(){
         return altura;
     }
 
@@ -67,7 +67,7 @@ public:
        radio = a;
     }
     
-    float getRadio(){
+    float obtenerRadio(){
         return radio;
     }
 
@@ -97,11 +97,11 @@ public:
         altura = b;
     }
     
-    float getBase(){
+    float obtenerBase(){
         return base;
     }
 
-    float getAltura(){
+    float obtenerAltura(){
         return altura;
     }
 
