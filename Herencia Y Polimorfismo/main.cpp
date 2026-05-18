@@ -1,3 +1,5 @@
+//Ricardo Garcia - Herencia y Polimorfismo
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -12,7 +14,7 @@ public:
 
     figura(string n){
         nombre = n ;
-    }
+    } 
 
     virtual float calcularArea() = 0;
     virtual void mostrarInfo() = 0;
@@ -28,7 +30,6 @@ private:
 
 public:
     rectangulo (float a, float b):figura("Rectangulo"){
-
         base = a;
         altura = b;
     }
@@ -37,7 +38,7 @@ public:
         return base;
     }
 
-    float obternerAltura(){
+    float obtenerAltura(){
         return altura;
     }
 
@@ -92,7 +93,6 @@ private:
 
 public:
     triangulo (float a, float b):figura("Triangulo"){
-
         base = a;
         altura = b;
     }
@@ -119,8 +119,7 @@ public:
 
 };
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
     figura *a[10];
 
     srand(time(nullptr));
@@ -134,9 +133,9 @@ int main(int argc, char const *argv[])
         float r = rand() % 10 + 1;
 
         if (figuras == 1){
-
             a[i]= new rectangulo (b,h);
         }
+
         else if (figuras == 2){
             a[i] = new circulo(r);
         }
@@ -146,13 +145,11 @@ int main(int argc, char const *argv[])
         }
     }
     
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++){
         a[i] -> mostrarInfo();
     }
     
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++){
         delete a[i];
     }
     
